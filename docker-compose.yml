@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  # FastAPI Backend
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./books:/app/books:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    healthcheck:
+      test: [ "CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Next.js Frontend (Development)
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./web:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_API_URL=http://api:8000
+    depends_on:
+      - api
+
+  # Production BookBot CLI
+  bookbot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./books:/app/books:ro
+      - ./output:/app/output
+    command: [ "books/frankenstein.txt", "-f", "text" ]
+    profiles: [ "cli" ]
+
+  # Test runner
+  bookbot-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    volumes:
+      - ./tests:/app/tests:ro
+      - ./src:/app/src:ro
+    command: [ "pytest", "tests/", "-v", "--tb=short" ]
+    profiles: [ "test" ]
+
+networks:
+  default:
+    name: bookbot-network
