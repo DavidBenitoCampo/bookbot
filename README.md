@@ -35,8 +35,6 @@ This project solves a real problem: **analyzing and extracting insights from lar
 
 ## 🏗️ Architecture
 
-## 🏗️ Architecture
-
 ```
 +-------------------------------------------------------------+
 |                      PRODUCTION STACK                       |
@@ -63,6 +61,7 @@ This project solves a real problem: **analyzing and extracting insights from lar
 |          MyPy           Coverage         Artifacts   Cache  |
 +-------------------------------------------------------------+
 
+```
 
 ---
 
