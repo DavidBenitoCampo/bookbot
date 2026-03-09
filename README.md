@@ -35,6 +35,8 @@ This project solves a real problem: **analyzing and extracting insights from lar
 
 ## 🏗️ Architecture
 
+```
+
 +-------------------------------------------------------------+
 |                      PRODUCTION STACK                       |
 +-------------------------------------------------------------+
@@ -59,6 +61,8 @@ This project solves a real problem: **analyzing and extracting insights from lar
 |          Black/Flake8   3.9-3.12         Package     Image  |
 |          MyPy           Coverage         Artifacts   Cache  |
 +-------------------------------------------------------------+
+
+```
 
 ---
 
