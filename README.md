@@ -33,6 +33,7 @@ This project solves a real problem: **analyzing and extracting insights from lar
 
 ---
 
+```mermaid
 graph TD
     subgraph "PRODUCTION STACK"
         direction TB
@@ -56,6 +57,7 @@ graph TD
     style L fill:#161b22,stroke:#3081f7,color:#fff
     style T fill:#161b22,stroke:#3081f7,color:#fff
     style D fill:#161b22,stroke:#f0883e,color:#fff
+```
     
 ---
 
