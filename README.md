@@ -33,8 +33,32 @@ This project solves a real problem: **analyzing and extracting insights from lar
 
 ---
 
-<img width="1148" height="302" alt="image" src="https://github.com/user-attachments/assets/84b3eadc-d9c6-4991-bad6-6feb14348c1e" />
-<img width="1148" height="302" alt="image" src="https://github.com/user-attachments/assets/84b3eadc-d9c6-4991-bad6-6feb14348c1e" />
+## 🏗️ Architecture
+
++-------------------------------------------------------------+
+|                      PRODUCTION STACK                       |
++-------------------------------------------------------------+
+|                                                             |
+|   +-----------+         +-----------+         +-----------+ |
+|   |  Next.js  |         |  FastAPI  |         |  BookBot  | |
+|   |  Frontend |-------->|  Backend  |         |    CLI    | |
+|   |   :3000   |         |   :8000   |         |  (batch)  | |
+|   +-----------+         +-----------+         +-----------+ |
+|         |                     |                     |       |
+|   +-------------------------------------------------------+ |
+|   |           Docker Compose Network (bookbot-network)    | |
+|   +-------------------------------------------------------+ |
+|                                                             |
++-------------------------------------------------------------+
+
++-------------------------------------------------------------+
+|                       CI/CD PIPELINE                        |
++-------------------------------------------------------------+
+| Push/PR ---> Lint ---> Test (Matrix) ---> Build ---> Docker |
+|               |            |                |          |    |
+|          Black/Flake8   3.9-3.12         Package     Image  |
+|          MyPy           Coverage         Artifacts   Cache  |
++-------------------------------------------------------------+
 
 ---
 
