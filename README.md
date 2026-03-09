@@ -33,32 +33,9 @@ This project solves a real problem: **analyzing and extracting insights from lar
 
 ---
 
-```mermaid
-graph TD
-    subgraph "PRODUCTION STACK"
-        direction TB
-        subgraph "Docker Compose Network (bookbot-network)"
-            A[Next.js Frontend<br/>:3000] -->|REST API| B[FastAPI Backend<br/>:8000]
-            C[BookBot CLI<br/>batch processing]
-        end
-    end
+<img width="1148" height="302" alt="image" src="https://github.com/user-attachments/assets/84b3eadc-d9c6-4991-bad6-6feb14348c1e" />
+<img width="1148" height="302" alt="image" src="https://github.com/user-attachments/assets/84b3eadc-d9c6-4991-bad6-6feb14348c1e" />
 
-    subgraph "CI/CD PIPELINE"
-        direction LR
-        P[Push/PR] --> L[Lint<br/>Black/Flake8/MyPy]
-        L --> T[Test Matrix<br/>3.9-3.12 / Coverage]
-        T --> Build[Build<br/>Package Artifacts]
-        Build --> D[Docker<br/>Image/Cache]
-    end
-
-    style A fill:#23272e,stroke:#3fb950,color:#fff
-    style B fill:#23272e,stroke:#3fb950,color:#fff
-    style C fill:#23272e,stroke:#3fb950,color:#fff
-    style L fill:#161b22,stroke:#3081f7,color:#fff
-    style T fill:#161b22,stroke:#3081f7,color:#fff
-    style D fill:#161b22,stroke:#f0883e,color:#fff
-```
-    
 ---
 
 ## ⚡ DevOps Features
