@@ -23,7 +23,7 @@
 This project solves a real problem: **analyzing and extracting insights from large text documents** (books, reports, manuscripts). It combines a Python analysis engine, a REST API, and a modern web dashboard—all containerized and deployed with industry-standard DevOps practices.
 
 | Component | Technology | Purpose |
-|-----------|------------|---------|
+| :--- | :--- | :--- |
 | **Backend API** | Python 3.12 + FastAPI | RESTful API for text analysis |
 | **Frontend** | Next.js 15 + React 19 | Real-time analytics dashboard |
 | **CLI Tool** | Python + Click | Batch processing & automation |
