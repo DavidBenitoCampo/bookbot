@@ -32,10 +32,12 @@ This project solves a real problem: **analyzing and extracting insights from lar
 | **Testing** | Pytest + Coverage | Unit & integration tests |
 
 ---
-
+<div align="center">
 ## 🏗️ Architecture
 
+
 ```
+
 +-------------------------------------------------------------+
 |                      PRODUCTION STACK                       |
 +-------------------------------------------------------------+
@@ -62,7 +64,7 @@ This project solves a real problem: **analyzing and extracting insights from lar
 +-------------------------------------------------------------+
 
 ```
-
+<\div>
 ---
 
 ## ⚡ DevOps Features
